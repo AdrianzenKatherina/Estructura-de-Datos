@@ -1,0 +1,29 @@
+#include <iostream>
+#include <cmath>
+using namespace std;
+
+int main()
+{
+    int a,b,c;
+    
+    cout<<"Ingrese el valor de A: ";
+    cin>>a;
+    cout<<"Ingrese el valor de B: ";
+    cin>>b;
+    cout<<"Ingrese el valor de C: ";
+    cin>>c;
+    float x=(b*b)-(4*a*c);
+    float x1,x2;
+    
+    if (x<=0){
+        cout<<"Solo existe en numeros imaginarios."<<endl;
+    }
+    else {
+        x1= (-b + sqrt(x))/(2*a);
+        x2= (-b - sqrt(x))/(2*a);
+        cout<<"x1= "<<x1<<endl;
+        cout<<"x2= "<<x2<<endl;
+    }
+
+    return 0;
+}
