@@ -1,0 +1,66 @@
+#include <iostream>
+using namespace std;
+
+float potencia(float num, float x);
+float factorial(float f);
+float serie(float x, float num);
+
+int main() {
+   int op;
+   float num, x;
+   do {
+      cout<<"Ingresa un numero segun lo que quieras hacer"<<endl;
+      cout<<"1. Potencia"<<endl;
+      cout<<"2. Factorial"<<endl;
+      cout<<"3. Serie"<<endl;
+      cout<<"0. Salir"<<endl;
+      cin>>op;
+
+      switch(op){
+      case 1:
+         cout<<"Ingrese el numero de base: ";cin>>num;
+         cout<<"Ingresa a la potencia que elevaras ese numero: ";cin>>x;
+         cout<<"El resultado es"<<potencia(num, x)<<endl;
+      break;
+
+      case 2:
+         cout<<"Ingresa el numero al que desees obtener su factorial: ";cin>>num;
+         cout<<"El factorial de"<<num<<" es: "<<factorial(num)<<endl;
+      break;
+
+      case 3:
+         cout<<"Ingresa el numero que será x en la serie: ";cin>>x;
+         cout<<"ingresa n en la serie: ";cin>>num;
+         cout<<"El resultado es de: "<<serie(x, num)<<endl;
+      break;
+
+      case 0: cout<<"Vuleva Pronto!"<<endl;
+              return 0;
+      break; 
+      default: cout<<"Ingresa una opción valida"<<endl;
+}
+
+   }  while (op!=0);
+
+
+   return 0;
+}
+
+float potencia(float num, float x){
+  float rpot=1,i;
+	for (i=1;i<=x;i++)
+		rpot=rpot*num;
+	return rpot;
+}
+float factorial(float f) {
+   float fact = 1;
+   for (int i = 1; i <= f; i++) 
+      fact = fact * i;
+   return fact;
+}
+float serie (float x, float num){
+   float res=3;
+   for (int i=0; i<num;i++)
+      res=res+ (potencia(x, i)/factorial(i));
+   return res;
+}
