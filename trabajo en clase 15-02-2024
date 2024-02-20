@@ -1,0 +1,86 @@
+/* INTEGRANTES
+	KATHERINA ADRIANZEN
+	JOSE MARIA MENDEZ
+	JESUS MANUEL OSINAGA */
+#include <iostream>
+using namespace std;
+//POTENCIA
+float potencia(float num, float x);
+
+//FACTORIAL
+float factorial(float f);
+
+//SERIE
+float serie(float x, float num);
+
+int main() {
+   int opc; float num, x;
+   do {
+      cout<<"Ingresa un numero segun lo que quieras hacer"<<endl;
+      cout<<"1.Potencia"<<endl<<"2.Factorial"<<endl<<"3.Serie"<<endl<<"4. Salir"<<endl;
+      cin>>opc;
+
+      switch(opc){
+      case 1: {
+         cout<<"Ingresa el numero al que desees elevar"<<endl;
+         cin>>num;
+         cout<<"Ingresa a la potencia que elevaras ese numero"<<endl;
+         cin>>x;
+         cout<<"El resultado es"<<potencia(num, x)<<endl;
+      }
+      break;
+
+      case 2:{
+         cout<<"Ingresa el numero al que desees obtener su factorial"<<endl;
+         cin>>num;
+         cout<<"El factorial de"<<num<<" es: "<<factorial(num)<<endl;
+      }
+      break;
+
+      case 3:{
+         cout<<"Ingresa el numero que será x en la serie"<<endl;
+         cin>>x;
+cout<<"ingresa n en la serie"<<endl;
+cin>>num;
+         cout<<"El resultado es de: "<<serie(x, num)<<endl;
+      }
+      break;
+
+      case 4:{return 0;}
+      break; 
+      default: {cout<<"Ingresa una opción valida"<<endl;} 
+}
+
+   }  while (opc!=4);
+
+
+   return 0;
+}
+
+//POTENCIA 
+float potencia(float num, float x){
+
+    float rpot=1,i;
+	for (i=1;i<=x;i++){
+		rpot=rpot*num;
+	}
+	return rpot;
+}
+
+//FACTORIAL
+float factorial(float f) {
+   float fact = 1;
+   for (int i = 1; i <= f; i++) {
+      fact = fact * i;
+      }
+   return fact;
+}
+
+//SERIE
+float serie (float x, float num){
+   float res=3;
+   for (int i=0; i<num;i++){
+      res=res+ (potencia(x, i)/factorial(i));
+   }
+return res;
+}
