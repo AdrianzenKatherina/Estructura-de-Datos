@@ -1,0 +1,77 @@
+#include <iostream>
+using namespace std;
+
+void potencia(float num, float x, float &rpot);
+int factorial(int f);
+float serie(float x, float num);
+
+int main()
+{
+    int op;
+    float num,x,rpot;
+    do{
+        cout<<"Ingrese un numero segun lo que quieras hacer: "<<endl;
+        cout<<"1. Potencia"<<endl;
+        cout<<"2. Factorial"<<endl;
+        cout<<"3. Serie"<<endl;
+        cout<<"0. SALIR"<<endl;
+        cin>>op;
+        
+        switch(op){
+            case 1: 
+                cout<<"Ingrese el numnero al que desees elevar: ";
+                do{
+                    cin>>num;
+                }while(num>=0);
+                cout<<"Ingrese la potencia a la que desea elevar este numero: ";
+                do{
+                    cin>>x;
+                }while(x>=0);
+                potencia(num,x,rpot);
+                cout<<"El resultado es "<<rpot<<endl;
+            break;
+            
+            case 2: 
+                cout<<"Ingresa el numero al que sacaras el factorial: ";cin>>num;
+                cout<<"El factorial de "<<num<<" es : "<<factorial(num);
+            break;
+            
+            case 3: 
+                cout<<"Ingresa el numero que sera x en la serie: ";cin>>x;
+                cout<<"Ingresa 'n' en la serie: ";cin>>num;
+                cout<<"El resultado es: "<<serie(x,num)<<endl;
+            break;
+            case 0: 
+                cout<<"Vuelva pronto!"<<endl;
+                return 0;
+            break;
+            default: cout<<"Ingrese una opcion valida"<<endl;
+            
+            }
+        }
+    } while(op!=0);
+
+    return 0;
+}
+
+void potencia(float num, float x, float &rpot){
+    float rpot=1,i;
+    for(i=1;i<=x;i++)
+       rpot*=num;
+} //no necesita return r pq el resultado esta en r
+
+int factorial(int f){
+    int fact=1;
+    for(int i=1;i<=f;i++)
+       fact*=i;
+    return fact;
+}
+
+float serie (float x, float num){
+    float res=0,m;
+    for (int i=0;i<=num;i=i+2){
+        potencia(x,i,m)
+        res=res+(potencia(x,i)/factorial(i));
+    }
+    return res+3+x;
+}
