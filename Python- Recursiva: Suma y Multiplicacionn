@@ -1,0 +1,20 @@
+def suma_recursiva(a, b):
+    if a == 0:
+        return b
+    else:
+        return suma_recursiva(a - 1, b + 1)
+
+def multiplicacion_recursiva(a, b):
+    if a == 0 or b == 0:
+        return 0
+    else:
+        return b + multiplicacion_recursiva(a - 1, b)
+
+variable_a = int(input("Ingresa el valor de la primera variable: "))
+variable_b = int(input("Ingresa el valor de la segunda variable: "))
+
+resultado_suma = suma_recursiva(variable_a, variable_b)
+resultado_multiplicacion = multiplicacion_recursiva(variable_a, variable_b)
+
+print(f"Resultado de la suma: {resultado_suma}")
+print(f"Resultado de la multiplicación: {resultado_multiplicacion}")
