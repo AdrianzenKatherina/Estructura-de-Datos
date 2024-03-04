@@ -1,0 +1,17 @@
+class Paralelogramo:
+    def __init__(self, base, altura):
+        self.base = base
+        self.altura = altura
+
+    def area(self):
+        area = self.base * self.altura
+        return area
+
+# Ejemplo de uso:
+basep = float(input("Ingrese la base: "))
+alturap = float(input("Ingrese la parte altura: "))
+#crear objeto
+mparalelo = Paralelogramo(basep, alturap)
+areare = mparalelo.area()
+
+print("El área del paralelogramo con base: ",basep, "y altura: ", alturap, "es: ",areare)
