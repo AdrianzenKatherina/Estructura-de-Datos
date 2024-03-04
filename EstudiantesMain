@@ -1,0 +1,17 @@
+#include <iostream>
+#include "Estudiante.h"
+#include <string>
+using namespace std;
+
+int main()
+{
+	Estudiante alumno;
+	string nombre;
+	cout << "Ingrese el nombre: ";
+	getline(cin, nombre);
+	alumno.set_nombre(nombre); //llamando a set_nombre de la clase Est a traves del obj alumno
+	cout << "El nombre del alumno es: " << alumno.get_nombre() <<endl;//muestra el a
+	cout << "El nombre es: " << nombre;//muestra el nombre de la variable
+	return 0;
+
+}
